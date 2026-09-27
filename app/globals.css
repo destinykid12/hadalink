@@ -1,0 +1,119 @@
+@import "tailwindcss";
+
+@theme {
+  /* Warm, grounded palette for a Nigerian agricultural marketplace.
+     Deep green for trust, terracotta for energy, warm neutrals for calm. */
+  --color-ink: #1b2a22;
+  --color-ink-soft: #4a5a50;
+  --color-muted: #6e7a71;
+  --color-primary: #1f5d3f;
+  --color-primary-dark: #16472f;
+  --color-primary-soft: #e8f1ec;
+  --color-accent: #b4531f;
+  --color-accent-soft: #f8ebe3;
+  --color-sand: #f7f4ee;
+  --color-sand-deep: #efe9df;
+  --color-line: #e2dbcf;
+  --color-line-strong: #cdc4b4;
+  --color-danger: #a83232;
+  --color-danger-soft: #f7e8e8;
+  --color-success: #1f6b3f;
+  --color-warning: #8a6116;
+  --color-warning-soft: #f6eeda;
+
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  --font-display: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+
+  --shadow-card: 0 1px 2px rgba(27, 42, 34, 0.05);
+  --shadow-pop: 0 8px 24px rgba(27, 42, 34, 0.12);
+}
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-sand);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background-color: var(--color-primary);
+  color: #fff;
+}
+
+/* Keyboard focus must always be visible. */
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+input,
+select,
+textarea,
+button {
+  font-family: inherit;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+/* Subtle grain-free texture using flat warm tones only. */
+.surface {
+  background-color: #fff;
+  border: 1px solid var(--color-line);
+  border-radius: 0.5rem;
+}
+
+.page-shell {
+  width: 100%;
+  max-width: 76rem;
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+
+@media (min-width: 640px) {
+  .page-shell {
+    padding-inline: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .page-shell {
+    padding-inline: 2rem;
+  }
+}
+
+/* Accessible status helpers. */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Reduced motion respected. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
